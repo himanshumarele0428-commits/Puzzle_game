@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎯 Puzzle Quest</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Intro Screen -->
+  <div id="intro-screen" class="screen active">
+    <div class="intro-content">
+      <div class="intro-logo">🧩</div>
+      <h1 class="intro-title">Puzzle Quest</h1>
+      <p class="intro-subtitle">Infinite stages await your genius</p>
+      <button class="btn-glow" id="start-btn">Start Adventure</button>
+      <div class="intro-features">
+        <span>🧠 Brain Teasers</span>
+        <span>⭐ 3-Star Rating</span>
+        <span>🏆 Infinite Stages</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Level Select Screen -->
+  <div id="level-select-screen" class="screen">
+    <div class="level-select-header">
+      <h1>🧩 Choose Your Puzzle</h1>
+      <p>New stages are generated at runtime. Solve each stage to unlock the next — difficulty scales up!</p>
+    </div>
+    <div class="level-select-stats">
+      <span id="ls-progress">0 / 27 completed</span>
+      <span id="ls-stars">⭐ 0 / 81</span>
+    </div>
+    <div class="level-grid" id="level-grid">
+      <!-- Levels rendered by JS -->
+    </div>
+    <button class="btn-outline back-btn" id="ls-back-btn">← Back</button>
+  </div>
+
+  <!-- Game Screen -->
+  <div id="game-screen" class="screen">
+    <button class="btn-back" id="game-back-btn">← Levels</button>
+    <!-- Top Bar -->
+    <header id="top-bar">
+      <div class="progress-container">
+        <div class="level-badge" id="level-badge">1/27</div>
+        <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+      </div>
+      <div class="stats-container">
+        <div class="stat" id="stat-timer">⏱️ <span>0:00</span></div>
+        <div class="stat" id="stat-moves">🔄 <span>0</span></div>
+        <div class="stat" id="stat-stars">⭐ <span>0</span></div>
+      </div>
+    </header>
+
+    <!-- Puzzle Title -->
+    <div id="puzzle-header">
+      <h2 id="puzzle-name">Puzzle Name</h2>
+      <p id="puzzle-instruction">Instruction here</p>
+    </div>
+
+    <!-- Puzzle Board -->
+    <div id="puzzle-board">
+      <!-- Dynamic puzzle content renders here -->
+    </div>
+
+    <!-- Bottom Actions -->
+    <div id="bottom-actions">
+      <button class="btn-outline" id="hint-btn">💡 Hint</button>
+      <button class="btn-outline" id="reset-btn">🔄 Reset</button>
+    </div>
+  </div>
+
+  <!-- Victory Screen -->
+  <div id="victory-screen" class="screen">
+    <div class="victory-content">
+      <div class="celebration" id="celebration">🎉</div>
+      <h1 id="victory-title">Level Complete!</h1>
+      <div class="stars-display" id="stars-display">⭐⭐⭐</div>
+      <div class="victory-stats">
+        <p>⏱️ Time: <span id="victory-time">0:00</span></p>
+        <p>🔄 Moves: <span id="victory-moves">0</span></p>
+      </div>
+      <div class="victory-btns">
+        <button class="btn-outline" id="victory-levels-btn">← All Levels</button>
+        <button class="btn-glow" id="next-btn">Next Puzzle →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Completion Screen -->
+  <div id="complete-screen" class="screen">
+    <div class="victory-content">
+      <div class="celebration">🏆</div>
+      <h1>You're a Puzzle Master!</h1>
+      <div class="final-stars" id="final-stars">⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐</div>
+      <p class="final-text">All 27 puzzles solved!</p>
+      <div class="victory-stats">
+        <p>Total Time: <span id="final-time">0:00</span></p>
+        <p>Total Stars: <span id="final-stars-count">0</span> / 81</p>
+      </div>
+      <button class="btn-glow" id="replay-btn">🔄 Play Again</button>
+    </div>
+  </div>
+
+  <!-- Confetti Canvas -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <script src="js/puzzles.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
